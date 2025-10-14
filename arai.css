@@ -15,45 +15,76 @@
 /* === GENERAL STYLES FOR BOTH PAGES === */
 body.about,
 body.contact {
-  background-color: #ebe7da;
+  background-color: #EBE7DA;
   font-family: Arial, sans-serif;
   color: #4b2e2e;
   line-height: 1.6;
 }
 
 /* === NAVBAR === */
-.navbar {
+
+
+.custom-navbar {
   background-color: #4b2e2e !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.navbar-brand {
+
+.navbar-dark .navbar-brand {
   color: #f5f5dc !important;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-.navbar-brand:hover {
+.navbar-dark .navbar-brand:hover {
   color: #ffcc99 !important;
 }
 
-.navbar .nav-link {
+
+.navbar-dark .navbar-nav .nav-link {
   color: #f5f5dc !important;
   font-weight: bold;
   font-size: 1.1rem;
-  text-decoration: none !important;
-  transition: 0.3s;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: #ffcc99 !important;
-  text-decoration: none !important;
+.navbar-dark .navbar-nav .nav-link:hover {
+  background-color: #ffcc99 !important;
+  color: #4b2e2e !important;
 }
+
+.navbar-dark .navbar-nav .nav-link.active {
+  background-color: #ffcc99 !important;
+  color: #4b2e2e !important;
+  font-weight: bold;
+}
+
+
+.navbar-toggler {
+  border: 2px solid rgba(245, 245, 220, 0.6);
+  border-radius: 8px;
+  padding: 6px 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  border-color: #ffcc99;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 6px #ffcc99;
+}
+
+.navbar-toggler-icon {
+  filter: invert(0.9);
+}
+
 
 /* === IMAGES === */
 .img-fluid {
-  max-width: 80%;
+  max-width: 70%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -87,11 +118,11 @@ body.contact {
 }
 
 /* Hover colors per network */
-.social-links .as1 a:hover {
+.as1 a:hover {
   background: #1877f2;
 }
 
-.social-links .as2 a:hover {
+.as2 a:hover {
   background: linear-gradient(
     45deg,
     #f09433 0%,
@@ -102,11 +133,11 @@ body.contact {
   );
 }
 
-.social-links .as3 a:hover {
+.as3 a:hover {
   background: #0088cc;
 }
 
-.social-links .as4 a:hover {
+.as4 a:hover {
   background: #0077ff;
 }
 
@@ -138,3 +169,54 @@ footer {
 }
 
 
+.form-section .btn {
+  color: #f5f5dc;
+}
+
+
+.accordion-item{
+  color: #f5f5dc;
+  background-color: #6e3636;
+}
+
+
+.accordion-button {
+  color: #f5f5dc;
+  background-color: #4b2e2e;
+}
+
+#colorBtn:hover {
+  background-color: #4b2e2e !important;
+  color: #fff !important; 
+  border-color: #4b2e2e !important; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#popupForm {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; 
+}
+
+
+#popupForm > div {
+  max-width: 500px;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+
+#popupForm:not(.d-none) > div {
+  transform: scale(1);
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
