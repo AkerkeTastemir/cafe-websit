@@ -220,3 +220,46 @@ footer {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+.stars {
+  display: inline-flex;
+  gap: .25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  user-select: none;
+}
+.stars li {
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #f5f5dc;
+  transition: transform .12s ease, color .15s ease;
+}
+.stars li.hover,
+.stars li.active {
+  color: #f5b301;
+  transform: scale(1.06);
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .25rem;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+/* ===== Scroll Animations ===== */
+.animate-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
