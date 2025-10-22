@@ -74,26 +74,96 @@
     color: #4b2e2e;
 }
 
-/* Hero Section */
+/* =====================================
+   HERO SECTION — Cozy Café Welcome
+===================================== */
 .index .hero {
-    text-align: center;
-    padding: 140px 20px 80px 20px;
+  position: relative;
+  background-image: url("images/back.jpg"); /* ✅ путь к твоему фону */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #4b2e2e;
+  text-align: center;
+  padding: 180px 20px;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
 }
 
-.index .hero h1 {
-    font-size: 3.2em;
-    margin-bottom: 25px;
+/* мягкий полупрозрачный фильтр для читаемости текста */
+.index .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 250, 245, 0.8); /* лёгкий бежевый фильтр поверх фото */
+  z-index: 1;
+  backdrop-filter: blur(2px);
 }
 
-.index .hero p {
-    font-size: 1.4em;
-    margin-bottom: 50px;
-}
-
+/* текст и кнопки поверх фильтра */
+.index .hero h1,
+.index .hero p,
 .index .hero .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Заголовок */
+.index .hero h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #4b2e2e;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Подзаголовок */
+.index .hero p {
+  font-size: 1.3rem;
+  color: #5a3d2c;
+  margin-bottom: 40px;
+  animation: fadeUp 1.2s ease 0.2s forwards;
+}
+
+/* Кнопки */
+.index .hero .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  animation: fadeUp 1.2s ease 0.4s forwards;
+}
+
+.index .hero .btn {
+  background-color: #4b2e2e;
+  color: #fff;
+  padding: 16px 34px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 6px 12px rgba(75, 46, 46, 0.3);
+  transition: all 0.3s ease;
+}
+
+.index .hero .btn:hover {
+  background-color: #ffcc99;
+  color: #4b2e2e;
+  transform: translateY(-4px);
+}
+
+/* Анимация плавного появления */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .index .btn {
