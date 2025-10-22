@@ -315,7 +315,39 @@
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-
+.rating-stars {
+  display: inline-flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+.rating-stars .star {
+  font-size: 2rem;
+  color: #d1c1a5;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+.rating-stars .star:hover { transform: scale(1.15); }
+.rating-stars .star.active,
+.rating-stars .star.hover { color: #ffcc66; }
+.hint-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4b2e2e;
+  color: #f5f5dc;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 2000;
+  animation: fadeInOut 4s ease;
+}
+@keyframes fadeInOut {
+  0% {opacity: 0; transform: translateY(20px);}
+  10%, 90% {opacity: 1; transform: translateY(0);}
+  100% {opacity: 0; transform: translateY(20px);}
+}
 /* =====================================
    FOOTER
 ===================================== */

@@ -1,5 +1,6 @@
 // === Café Leaclercc Interactive Script ===
 document.addEventListener("DOMContentLoaded", () => {
+
   /* ========== 1. BACKGROUND COLOR CHANGE ========== */
   const colorBtn = document.getElementById("colorBtn") || document.getElementById("akerkeColorBtn");
   if (colorBtn) {
@@ -17,6 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
       playSound(); 
     });
   }
+
+  /* ========== NEW: READ MORE TOGGLE ========== */
+  const readMoreBtn = document.getElementById("readMoreBtn");
+  const moreText = document.getElementById("moreText");
+  if (readMoreBtn && moreText) {
+    readMoreBtn.addEventListener("click", () => {
+      const hidden = moreText.classList.contains("d-none");
+      moreText.classList.toggle("d-none");
+      readMoreBtn.textContent = hidden ? "Show less" : "Read more";
+    });
+  
+  }
+
+
 
   /* ========== 2. CURRENT DATE & TIME ========== */
   const datetime = document.getElementById("datetime");
