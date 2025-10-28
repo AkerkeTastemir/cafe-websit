@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
         gallery.style.transition = "background-color 0.6s ease";
       }
 
-      playSound(); 
+       playSound();
+       showToast('🌈 Café Mood changed!');
     });
   }
+
 
   /* ========== NEW: READ MORE TOGGLE ========== */
   const readMoreBtn = document.getElementById("readMoreBtn");
@@ -108,44 +110,53 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ========== 5. POPUP FORM (Akerke's Coffee Club) ========== */
-  const coffeePopup = document.getElementById("coffeePopup");
-  const openPopupBtn = document.getElementById("openPopupBtn");
-  const closePopupBtn = document.getElementById("closePopupBtn");
-  const coffeeForm = document.getElementById("coffeeForm");
+const coffeePopup = document.getElementById("coffeePopup");
+const openPopupBtn = document.getElementById("openPopupBtn");
+const closePopupBtn = document.getElementById("closePopupBtn");
+const coffeeForm = document.getElementById("coffeeForm");
 
-  if (coffeePopup && openPopupBtn && closePopupBtn && coffeeForm) {
-    openPopupBtn.addEventListener("click", () => {
-      coffeePopup.classList.remove("d-none");
-      playSound(); 
-    });
+if (coffeePopup && openPopupBtn && closePopupBtn && coffeeForm) {
+  openPopupBtn.addEventListener("click", () => {
+    coffeePopup.classList.remove("d-none");
+    playSound(); 
+  });
 
-    closePopupBtn.addEventListener("click", () => coffeePopup.classList.add("d-none"));
+  closePopupBtn.addEventListener("click", () => coffeePopup.classList.add("d-none"));
 
-    coffeePopup.addEventListener("click", (e) => {
-      if (e.target === coffeePopup) coffeePopup.classList.add("d-none");
-    });
+  coffeePopup.addEventListener("click", (e) => {
+    if (e.target === coffeePopup) coffeePopup.classList.add("d-none");
+  });
 
-    coffeeForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      let valid = true;
+  coffeeForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let valid = true;
 
-      coffeeForm.querySelectorAll("input").forEach((field) => {
-        if (!field.checkValidity()) {
-          field.classList.add("is-invalid");
-          valid = false;
-        } else {
-          field.classList.remove("is-invalid");
-        }
-      });
-
-      if (valid) {
-        playSound(); // 
-        alert("☕ Thank you for joining our Coffee Club!");
-        coffeeForm.reset();
-        coffeePopup.classList.add("d-none");
+    coffeeForm.querySelectorAll("input").forEach((field) => {
+      if (!field.checkValidity()) {
+        field.classList.add("is-invalid");
+        valid = false;
+      } else {
+        field.classList.remove("is-invalid");
       }
     });
-  }
+
+    if (valid) {
+      playSound();
+
+      // === jQuery Spinner simulation ===
+      const $btn = $('#coffeeForm button[type="submit"]');
+      const original = $btn.html();
+      $btn.prop('disabled', true)
+          .html('<span class="spinner-border spinner-border-sm me-2"></span>Please wait…');
+
+      setTimeout(() => {
+        $btn.prop('disabled', false).html(original);
+        coffeeForm.reset();
+        coffeePopup.classList.add("d-none");
+      }, 1200);
+    }
+  });
+}
 
   /* ========== 6. SWITCH STATEMENT (Greeting based on time) ========== */
   const now = new Date();
@@ -363,5 +374,58 @@ if (nav) {
       playNavSound();
       setTimeout(() => (window.location.href = url.href), 220); 
     }
+    
   });
 }
+// ===== jQuery Scroll Progress Bar =====
+$(function() {
+  const $bar = $('#scrollBar');
+  if (!$bar.length) return;
+  const update = () => {
+    const h = $(document).height() - $(window).height();
+    const p = h > 0 ? ($(window).scrollTop() / h) * 100 : 0;
+    $bar.css('width', p + '%');
+  };
+  $(window).on('scroll resize', update);
+  update();
+})
+// ===== jQuery Animated Counter =====
+$(function(){
+  const $stats = $('#stats .stat'); 
+  if (!$stats.length) return;
+  let done = false;
+
+  const inView = $el => {
+    const winTop = $(window).scrollTop();
+    const winBottom = winTop + $(window).height();
+    const elTop = $el.offset().top;
+    const elBottom = elTop + $el.outerHeight();
+    return elBottom > winTop && elTop < winBottom;
+  };
+
+  const run = () => {
+    if (done) return;
+    if (!inView($('#stats'))) return;
+    done = true;
+    $stats.each(function(){
+      const $n = $(this);
+      const target = +$n.data('to');
+      $({val:0}).animate({val:target},{
+        duration:1200, easing:'swing',
+        step(now){ $n.text(Math.floor(now)); },
+        complete(){ $n.text(target); }
+      });
+    });
+  };
+
+  $(window).on('scroll resize', run);
+  run();
+}); 
+// === Toast Notification Function ===
+function showToast(msg) {
+  const $t = $('#toast');
+  if (!$t.length) return;
+  $t.stop(true, true).text(msg).fadeIn(180, () => {
+    setTimeout(() => $t.fadeOut(250), 1400);
+  });
+} 

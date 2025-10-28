@@ -10,8 +10,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="akerke.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
 
+  <div id="scrollBar"></div>
+  
   <body class="index">
     <!-- ===== HEADER ===== -->
     <header>
@@ -74,6 +77,22 @@
       <p id="shortText">Our baristas create magic every morning...</p>
       <p id="moreText" class="d-none">They carefully roast, blend and craft drinks with love ☕</p>
       <button id="readMoreBtn" class="btn btn-outline-dark mt-2">Read more</button>
+    </section>
+    <section class="container my-5" id="stats">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="stat" data-to="1200">0</div>
+          <p>Happy Customers</p>
+        </div>
+        <div class="col-md-4">
+          <div class="stat" data-to="3500">0</div>
+          <p>Cups Served</p>
+        </div>
+        <div class="col-md-4">
+          <div class="stat" data-to="48">0</div>
+          <p>Menu Items</p>
+        </div>
+      </div>
     </section>
     <!-- ===== GALLERY / CAROUSEL ===== -->
     <section class="gallery text-center py-5">
@@ -284,7 +303,9 @@
       <p>Team: Akerke Tastemir, Mnaidarova Nargiza, Tyulebayeva Arailym</p>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
+  <div id="toast" class="toast-box" style="display:none;"></div>
 </html>

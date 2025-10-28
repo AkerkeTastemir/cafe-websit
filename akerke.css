@@ -165,7 +165,21 @@
     transform: translateY(0);
   }
 }
-
+#stats .stat {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #4b2e2e;
+}
+#scrollBar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 5px;
+  width: 0;
+  background: linear-gradient(90deg, #ffcc99, #4b2e2e);
+  z-index: 3000;
+  transition: width 0.15s linear;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 .index .btn {
     background-color: #4b2e2e;
     color: #fff;
