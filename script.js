@@ -338,7 +338,7 @@ if (nav) {
   nav.addEventListener("mousedown", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
-    // mousedown fires earlier than click — звук стартует до навигации
+    // mousedown fires earlier than click 
     playNavSound();
   });
 
@@ -351,7 +351,7 @@ if (nav) {
 
     const href = a.getAttribute("href");
     if (!href || href.startsWith("#")) {
-      // same-page anchor — не задерживаем
+      // same-page anchor 
       return;
     }
 
@@ -359,9 +359,9 @@ if (nav) {
     const url = new URL(href, location.href);
     if (url.origin === location.origin) {
       e.preventDefault();
-      // Если аудио не успело разлочиться, mousedown выше уже пытался
+      
       playNavSound();
-      setTimeout(() => (window.location.href = url.href), 220); // подгони под длину whoo.mp3
+      setTimeout(() => (window.location.href = url.href), 220); 
     }
   });
 }
