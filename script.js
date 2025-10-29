@@ -429,3 +429,17 @@ function showToast(msg) {
     setTimeout(() => $t.fadeOut(250), 1400);
   });
 } 
+// === Copy to Clipboard (Promo Code) ===
+$(function(){
+  $('#copyPromo').on('click', async function(){
+    const code = $('#promoCode').text().trim();
+    try {
+      await navigator.clipboard.writeText(code);
+      showToast('🎉 Promo copied!');
+      $(this).text('Copied ✅');
+      setTimeout(() => $(this).text('Copy'), 1200);
+    } catch(_) {
+      showToast('❌ Copy failed');
+    }
+  });
+});

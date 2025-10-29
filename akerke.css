@@ -496,7 +496,40 @@
   font-size: 1rem;
   line-height: 1.5;
 }
+/* === PROMO SECTION === */
+#promo {
+  font-size: 1.1rem;
+  color: #4b2e2e;
+}
 
+#promo code {
+  color: #d46a85;
+  font-weight: 600;
+}
+
+/* === COPY BUTTON STYLE === */
+.btn-copy {
+  background-color: #4b2e2e;
+  color: #fffbe9;
+  border: none;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-copy:hover {
+  background-color: #6c3d3d;
+  transform: translateY(-2px);
+}
+
+.btn-copy:active {
+  background-color: #3a1f1f;
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
 /* =====================================
    MEDIA QUERIES (RESPONSIVE)
 ===================================== */
