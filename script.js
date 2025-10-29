@@ -443,3 +443,12 @@ $(function(){
     }
   });
 });
+function showToast(msg) {
+  const $t = $('#toast');
+  if (!$t.length) return;
+  $t.stop(true, true).text(msg).fadeIn(180, () => {
+    setTimeout(() => $t.fadeOut(250), 1400);
+  });
+}
+
+$('#colorBtn').on('click', () => showToast('🌈 Café Mood changed!'));
