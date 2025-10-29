@@ -424,11 +424,17 @@ $(function(){
 // === Toast Notification Function ===
 function showToast(msg) {
   const $t = $('#toast');
-  if (!$t.length) return;
-  $t.stop(true, true).text(msg).fadeIn(180, () => {
-    setTimeout(() => $t.fadeOut(250), 1400);
-  });
-} 
+  if (!$t.length) {
+    console.warn('❗ Toast element not found in HTML!');
+    return;
+  }
+  console.log('✅ showToast triggered with:', msg);
+  $t.stop(true, true)
+    .text(msg)
+    .fadeIn(200, () => {
+      setTimeout(() => $t.fadeOut(300), 1500);
+    });
+}
 // === Copy to Clipboard (Promo Code) ===
 $(function(){
   $('#copyPromo').on('click', async function(){
@@ -443,12 +449,3 @@ $(function(){
     }
   });
 });
-function showToast(msg) {
-  const $t = $('#toast');
-  if (!$t.length) return;
-  $t.stop(true, true).text(msg).fadeIn(180, () => {
-    setTimeout(() => $t.fadeOut(250), 1400);
-  });
-}
-
-$('#colorBtn').on('click', () => showToast('🌈 Café Mood changed!'));
