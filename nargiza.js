@@ -77,3 +77,38 @@ $(function(){
       });
   }, 10000);
 });
+
+
+
+
+// === MENU PAGE: Stylish Center Toast ===
+document.addEventListener("DOMContentLoaded", function () {
+  const orderButtons = document.querySelectorAll(".order-btn");
+
+  if (orderButtons.length > 0) {
+    orderButtons.forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // создаём элемент всплывашки
+        const toast = document.createElement("div");
+        toast.className = "order-toast";
+        toast.textContent = "☕ Your coffee has been added to the order!";
+        document.body.appendChild(toast);
+
+        // плавное появление
+        setTimeout(() => toast.classList.add("show"), 100);
+
+        // исчезает через 2.5 секунды
+        setTimeout(() => {
+          toast.classList.remove("show");
+          setTimeout(() => toast.remove(), 500);
+        }, 2500);
+
+        if (typeof playSound === "function") {
+          playSound();
+        }
+      });
+    });
+  }
+});
