@@ -1,0 +1,224 @@
+/* =====================================
+   LIGHT / DARK THEME (GLOBAL)
+===================================== */
+
+/* 🌞 Светлая тема (по умолчанию) */
+body {
+  background-color: #EBE7DA;
+  color: #4b2e2e;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 🌙 Тёмная тема */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f5f5dc;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ===== NAVBAR ===== */
+body.dark-mode .navbar {
+  background-color: #2b2b2b !important;
+}
+
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar .navbar-brand {
+  color: #f5f5dc !important;
+}
+
+/* ===== BUTTONS ===== */
+body.dark-mode .btn {
+  background-color: #f5f5dc !important;
+  color: #2b2b2b !important;
+  border: none;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #ffcc99 !important;
+  color: #2b2b2b !important;
+}
+
+/* ===== CARDS, FOOTER, POPUPS ===== */
+body.dark-mode .item,
+body.dark-mode .popup-content,
+body.dark-mode footer {
+  background-color: #2b2b2b !important;
+  color: #f5f5dc !important;
+  border-color: #444;
+}
+
+/* ===== FOOTER ===== */
+body.dark-mode footer {
+  background-color: #1a1a1a !important;
+  color: #f5f5dc !important;
+}
+
+/* ===== SECTIONS (Hero, Gallery, FAQ, New Arrivals) ===== */
+body.dark-mode .gallery,
+body.dark-mode .hero,
+body.dark-mode .faq,
+body.dark-mode .new-arrivals {
+  background-color: #1a1a1a !important;
+  color: #f5f5dc !important;
+}
+
+/* ===== CAROUSEL ===== */
+body.dark-mode .carousel-caption h5 {
+  background-color: rgba(245, 245, 220, 0.12) !important;
+  color: #f5f5dc !important;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+body.dark-mode .carousel-item img {
+  filter: brightness(0.65) contrast(1.05);
+  transition: filter 0.4s ease;
+}
+
+/* ===== HERO OVERLAY ===== */
+body.dark-mode .hero {
+  position: relative;
+  background-color: #141414 !important;
+  color: #f5f5dc !important;
+}
+
+body.dark-mode .hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* затемнение 55% */
+  z-index: 1;
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero p,
+body.dark-mode .hero .hero-buttons {
+  position: relative;
+  z-index: 2;
+  color: #f5f5dc !important;
+}
+
+/* ===== FLOATING SIDE THEME BUTTON ===== */
+.side-theme-btn {
+  position: fixed;
+  top: 50%;                 /* центр по вертикали */
+  right: 0;                 /* приклеено к правому краю */
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 30px 0 0 30px;
+  background-color: #2b2b2b;
+  color: #f5f5dc;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+  z-index: 3000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.side-theme-btn:hover {
+  transform: translateY(-50%) scale(1.05);
+  background-color: #ffcc99;
+  color: #2b2b2b;
+}
+
+body:not(.dark-mode) .side-theme-btn {
+  background-color: #f5f5dc;
+  color: #2b2b2b;
+}
+/* ===== CONTACT PAGE DARK MODE — FINAL FIX ===== */
+
+body.dark-mode.contact {
+  background-color: #111 !important;
+  color: #f5f5dc !important;
+}
+
+/* Контейнер формы */
+body.dark-mode.contact .form-section {
+  background-color: #1a1a1a !important;
+  border-radius: 20px !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6) !important;
+  color: #f5f5dc !important;
+  transition: all 0.4s ease;
+}
+
+/* Сам <form> внутри блока (он у неё белый) */
+body.dark-mode.contact .form-section form {
+  background-color: #222 !important;
+  color: #f5f5dc !important;
+  border-radius: 18px !important;
+  padding: 25px !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5) !important;
+}
+
+/* Заголовки */
+body.dark-mode.contact .form-section h1,
+body.dark-mode.contact .form-section p {
+  color: #f5f5dc !important;
+}
+
+/* Лейблы */
+body.dark-mode.contact .form-section label.form-label {
+  color: #f5f5dc !important;
+  font-weight: 600;
+}
+
+/* Поля */
+body.dark-mode.contact .form-section input.form-control,
+body.dark-mode.contact .form-section textarea.form-control {
+  background-color: #333 !important;
+  color: #f5f5dc !important;
+  border: 1px solid #666 !important;
+  border-radius: 10px !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode.contact .form-section input.form-control:focus,
+body.dark-mode.contact .form-section textarea.form-control:focus {
+  background-color: #3a3a3a !important;
+  border-color: #ffcc99 !important;
+  box-shadow: 0 0 0 0.25rem rgba(255,204,153,0.25) !important;
+}
+
+/* Placeholder */
+body.dark-mode.contact .form-section input::placeholder,
+body.dark-mode.contact .form-section textarea::placeholder {
+  color: #d6d6d6 !important;
+  opacity: 0.8 !important;
+}
+
+/* Кнопка Submit */
+body.dark-mode.contact button[type="submit"],
+body.dark-mode.contact .form-section .btn-primary {
+  background-color: #ffcc99 !important;
+  color: #2b2b2b !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 12px !important;
+}
+
+body.dark-mode.contact button[type="submit"]:hover,
+body.dark-mode.contact .form-section .btn-primary:hover {
+  background-color: #f5f5dc !important;
+  color: #2b2b2b !important;
+}
+
+/* Copy Button */
+body.dark-mode.contact #copyBtn {
+  background-color: #333 !important;
+  color: #f5f5dc !important;
+  border: 1px solid #555 !important;
+}
+
+body.dark-mode.contact #copyBtn:hover {
+  background-color: #ffcc99 !important;
+  color: #2b2b2b !important;
+}
+
+/* Footer */
+body.dark-mode.contact footer {
+  background-color: #111 !important;
+  color: #f5f5dc !important;
+}

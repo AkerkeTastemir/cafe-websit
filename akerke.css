@@ -588,3 +588,70 @@
   font-weight: 600;
   display: none;
 }
+/* ======== EXTRA MOBILE FIXES (<=768px) ======== */
+@media (max-width: 768px) {
+
+  /* Hero text smaller */
+  .index .hero {
+    padding: 100px 20px;
+    background-position: center;
+  }
+
+  .index .hero h1 {
+    font-size: 2rem;
+  }
+
+  .index .hero p {
+    font-size: 1rem;
+  }
+
+  .index .hero .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* New Arrivals grid */
+  .new .items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new .item {
+    width: 85%;
+    margin-bottom: 25px;
+  }
+
+  /* Reduce paddings */
+  .new .new-arrivals,
+  .index .gallery,
+  .faq,
+  footer {
+    padding: 30px 15px;
+  }
+
+  /* Buttons smaller */
+  .new .order-btn,
+  .new .new-back-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+
+  /* Stats section */
+  #stats .stat {
+    font-size: 1.6rem;
+  }
+
+  /* Carousel smaller height */
+  .index .carousel-item img {
+    height: 280px;
+  }
+
+  /* Toast & hint position fix */
+  .toast-box,
+  .hint-box {
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+}
