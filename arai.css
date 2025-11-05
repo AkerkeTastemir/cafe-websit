@@ -21,6 +21,7 @@ body.contact {
   line-height: 1.6;
 }
 
+
 /* === NAVBAR === */
 
 
@@ -445,3 +446,90 @@ button[type="submit"]:hover {
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
+/* General styles */
+body.about {
+  background: #fffaf5;
+  color: #333;
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background: linear-gradient(90deg, #ffcc99, #4b2e2e);
+  z-index: 999;
+}
+
+.notify {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: none;
+  background: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+mark {
+  background: rgb(255, 225, 114);
+}
+
+ #progressBar{position:fixed;top:0;left:0;height:5px;width:0;background:linear-gradient(to right, #ffcc99, #4b2e2e);z-index:999;}
+  .notify{position:fixed;top:20px;right:20px;display:none;background:#4caf50;color:#fff;padding:10px 15px;border-radius:5px;z-index:1000;}
+  
+
+  /* ====== MOBILE MENU  ====== */
+@media (max-width: 992px) {
+
+  /* Контейнер меню */
+  .navbar-collapse {
+    text-align: center;
+    border-radius: 20px;
+    padding: 15px 0; /* было 20px — чуть меньше */
+    margin-top: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    animation: dropdownFade 0.35s ease;
+  }
+
+  /* Элементы списка */
+  .navbar-nav .nav-item {
+    margin: 3px 0; /* было 12px — расстояние между кнопками уменьшено */
+  }
+
+  /* Ссылки */
+  .navbar-nav .nav-link {
+    display: inline-block;
+    width: 85%;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 8px 10px; /* было 12px — немного компактнее */
+    transition: all 0.3s ease;
+  }
+
+  /* Hover */
+  .navbar-nav .nav-link:hover {
+    transform: scale(1.03);
+  }
+
+  /* Центровка иконки */
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  /* Анимация */
+  @keyframes dropdownFade {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
