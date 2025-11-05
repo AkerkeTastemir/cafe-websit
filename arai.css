@@ -533,3 +533,20 @@ mark {
     }
   }
 }
+
+/* ===== GREETING MESSAGE BAR ===== */
+#greetingMessage {
+  background-color: #EBE7DA;      
+  color: #4b2e2e;                 
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 0;
+  letter-spacing: 0.5px;
+}
+
+/* вариант для тёмной темы */
+body.dark-mode #greetingMessage {
+  background-color: #1a1a1a;
+  color: #ffcc99;
+}
