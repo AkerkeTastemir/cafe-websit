@@ -449,3 +449,84 @@ $(function(){
     }
   });
 });
+
+$(document).ready(function () {
+      console.log("jQuery is ready!");          /* Task 0 */
+
+      /* Task 1 – Real-time filter */
+      $("#search").on("keyup", function () {
+        const value = $(this).val().toLowerCase();
+        $("#items li").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().includes(value));
+        });
+      });
+
+      /* Task 2 – Autocomplete */
+      const suggestions = ["Cappuccino", "Latte", "Mocha", "Espresso", "Flat White"];
+      $("#search").on("input", function () {
+        $("#suggestions").remove();
+        const val = $(this).val().toLowerCase();
+        if (val) {
+          const list = $("<ul id='suggestions' class='list-group position-absolute w-50 mx-auto'></ul>");
+          suggestions.forEach(s => {
+            if (s.toLowerCase().startsWith(val))
+              list.append(`<li class='list-group-item suggest'>${s}</li>`);
+          });
+          $(this).after(list);
+        }
+      });
+      $(document).on("click", ".suggest", function () {
+        $("#search").val($(this).text());
+        $("#suggestions").remove();
+      });
+
+      /* Task 3 – Highlight */
+      $("#search").on("change", function () {
+        const word = $(this).val();
+        const html = $("#highlightText").text();
+        const regex = new RegExp(`(${word})`, "gi");
+        $("#highlightText").html(html.replace(regex, "<mark>$1</mark>"));
+      });
+
+      /* Task 4 – Scroll Progress */
+      $(window).on("scroll", function () {
+        const s = $(window).scrollTop();
+        const h = $(document).height() - $(window).height();
+        $("#progressBar").css("width", (s / h) * 100 + "%");
+      });
+
+      /* Task 5 – Animated Counter */
+      $(".counter").each(function () {
+        const $this = $(this);
+        $({ countNum: 0 }).animate({ countNum: $this.data("count") }, {
+          duration: 2000, easing: "swing",
+          step: function () { $this.text(Math.floor(this.countNum)); },
+          complete: function () { $this.text(this.countNum + "+"); }
+        });
+      });
+
+      /* Task 7 – Notification */
+      function notify(msg) {
+        $("#notify").text(msg).fadeIn(200).delay(2000).fadeOut(400);
+      }
+      notify("Welcome to Café Leaclercc!");
+
+      /* Task 8 – Copy Button */
+      $("<button id='copyBtn' class='btn btn-sm btn-outline-dark mt-3'>Copy About Text</button>")
+        .insertAfter("#highlightText");
+      $("#copyBtn").on("click", function () {
+        navigator.clipboard.writeText($("#highlightText").text());
+        $(this).text("✔ Copied!").delay(800).queue(function () {
+          $(this).text("Copy About Text").dequeue();
+        });
+      });
+
+      /* Task 9 – Lazy Loading Images */
+      $(window).on("scroll", function () {
+        $(".lazy").each(function () {
+          if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+            $(this).attr("src", $(this).data("src")).removeClass("lazy");
+          }
+        });
+      });
+    });
