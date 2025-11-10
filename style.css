@@ -66,6 +66,38 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* =====================================
+   🌙 DARK MODE — NAVBAR FIXES
+===================================== */
+
+body.dark-mode .navbar.bg-dark {
+  background-color: #2b1a11 !important; /* более тёмный фон */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .navbar-dark .navbar-brand {
+  color: #f6e8d0 !important; /* светлый бежевый логотип */
+}
+
+body.dark-mode .navbar-dark .navbar-brand:hover {
+  color: #ffcc99 !important; /* мягкий подсвет при наведении */
+}
+
+body.dark-mode .navbar-dark .navbar-nav .nav-link {
+  color: #f8f3e7 !important; /* светлые ссылки */
+}
+
+body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+  background-color: #f6e8d0 !important;
+  color: #2b1a11 !important;
+}
+
+body.dark-mode .navbar-dark .navbar-nav .nav-link.active {
+  background-color: #ffcc99 !important;
+  color: #2b1a11 !important;
+  font-weight: 700;
+}
+
 
 /* ================= GENERAL ================= */
 body {
@@ -134,7 +166,7 @@ body {
 ===================================== */
 .menu .hero {
   position: relative;
-  background-image: url("images/menu-bg.jpg"); 
+  background-image: url("images/back.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -187,9 +219,32 @@ body {
 .menu .hero .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;             
+  gap: 1.2rem;                
+  margin-top: 1.5rem;
   animation: fadeUp 1.2s ease 0.4s forwards;
 }
+
+/* Стили самих кнопок */
+.menu .hero .btn {
+  background-color: #4b2e2e;
+  color: #fffbea;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.menu .hero .btn:hover {
+  background-color: #ffcc99;
+  color: #4b2e2e;
+  transform: translateY(-3px);
+}
+
 
 .menu .hero .btn {
   background-color: #4b2e2e;
@@ -504,6 +559,49 @@ body {
     }
 }
 
+/* ====== HERO BUTTONS RESPONSIVE FIX ====== */
+@media (max-width: 1024px) {
+  .menu .hero .hero-buttons {
+    gap: 1rem;
+  }
+
+  .menu .hero .btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu .hero .hero-buttons {
+    flex-direction: column;     /* ставим кнопки в колонку */
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu .hero .btn {
+    width: 80%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .menu .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu .hero .btn {
+    width: 90%;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .menu .hero h1 {
+    font-size: 1.7rem;
+  }
+}
+
+
 
 /* ================= MENU SECTIONS ================= */
 .menu {
@@ -517,18 +615,49 @@ body {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .menu .item {
     background-color: #EBE7DA;
     border: 1px solid #d2b48c;
     border-radius: 12px;
-    padding: 20px;
-    width: 250px;
+    padding: 22px;
+    width: 270px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+.menu .description {
+    font-size: 1.1rem; 
+    line-height: 1.5;
+    margin: 12px 0;
+    color: #4b2e2e;
+}
+
+
+.menu .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4b2e2e;
+    margin-bottom: 18px;
+}
+
+.menu .order-btn {
+    background-color: #4b2e2e;
+    color: #fff;
+    padding: 12px 28px; 
+    font-size: 1rem; 
+    border-radius: 12px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
 
 .menu .item:hover {
     transform: translateY(-5px);
@@ -627,6 +756,40 @@ body {
     height: 40px;
 }
 
+/* ===== Responsive fix for cards ===== */
+@media (max-width: 768px) {
+  .menu .items {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .menu .item {
+    width: 90%; /* карточка почти на всю ширину экрана */
+    padding: 15px; /* меньше внутренний отступ */
+  }
+
+  .menu .description {
+    font-size: 1rem; /* немного уменьшить на телефоне */
+  }
+
+  .menu .order-btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu .item {
+    width: 95%; /* почти вся ширина телефона */
+    padding: 12px;
+  }
+
+  .menu .description {
+    font-size: 0.95rem;
+  }
+}
+
+
 /* ================= BAR ================= */
 .bar {
     background-color: #EBE7DA;
@@ -639,7 +802,7 @@ body {
 ===================================== */
 .bar .hero {
   position: relative;
-  background-image: url("images/bar-bg.jpg"); /* ✅ можешь заменить на фото бара */
+  background-image: url("images/back.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -846,18 +1009,78 @@ body {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
+
+/* ===== CATEGORY HEADINGS (Breakfast, Desserts, etc.) ===== */
+.menu h2,
+.bar h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4b2e2e;
+  margin: 40px 0 25px 0; /* сверху и снизу отступы */
+  position: relative;
+}
+
+/* Можно добавить тонкую декоративную линию под заголовком */
+.menu h2::after,
+.bar h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #4b2e2e;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
 
 .bar .item {
     background-color: #EBE7DA;
     border: 1px solid #d2b48c;
     border-radius: 12px;
-    padding: 20px;
-    width: 250px;
+    padding: 22px;
+    width: 270px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}н
+
+.bar .description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 12px 0;
+    color: #4b2e2e;
 }
+
+.bar .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4b2e2e;
+    margin-bottom: 18px;
+}
+
+.bar .order-btn {
+    background-color: #4b2e2e;
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 1rem; 
+    border-radius: 12px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bar .order-btn:hover {
+    background-color: #ffcc99;
+    color: #4b2e2e;
+    transform: translateY(-3px);
+}
+
 
 .bar .item:hover {
     transform: translateY(-5px);
@@ -956,6 +1179,41 @@ body {
     height: 40px;
 }
 
+/* ===== Responsive fix for bar cards ===== */
+@media (max-width: 768px) {
+  .bar .items {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .bar .item {
+    width: 90%; /* почти вся ширина на телефоне */
+    padding: 15px;
+  }
+
+  .bar .description {
+    font-size: 1rem;
+  }
+
+  .bar .order-btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar .item {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .bar .description {
+    font-size: 0.95rem;
+  }
+}
+
+
+
 
 /* ================= BUTTONS ================= */
 .menu .custom-btn,
@@ -1000,6 +1258,16 @@ body {
     .bar h1, .menu h1 { font-size: 2rem; }
     .bar h2, .menu h2 { font-size: 1.5rem; }
     .bar footer, .menu footer { font-size: 0.9rem; padding: 12px; }
+}
+
+
+
+@media (max-width: 768px) {
+  .menu h2,
+  .bar h2 {
+    font-size: 1.6rem;
+    margin: 25px 0 15px 0;
+  }
 }
 
 
