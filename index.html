@@ -1,321 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Café Leaclercc</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="akerke.css" />
-    <link rel="stylesheet" href="theme.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Leaclerc</title>
 
-  <div id="scrollBar"></div>
-  
-  <body class="index">
-    <!-- ===== HEADER ===== -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img
-              src="images/logo.png"
-              alt="Café Leaclerc Logo"
-              width="60"
-              height="60"
-              class="rounded-circle me-2"
-            />
-            Café Leaclercc
-          </a>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="akerke.css" />
+  <link rel="stylesheet" href="theme.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span class="navbar-toggler-icon"></span>
+<div id="scrollBar"></div>
+
+<body class="index">
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="images/logo.png" alt="Café Leaclerc Logo" width="60" height="60" class="rounded-circle me-2" />
+          Café Leaclerc
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Log In</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero text-center">
+    <h1>Welcome to Café Leaclerc</h1>
+    <p>
+      Your cozy spot for fresh coffee, exquisite desserts, and unforgettable
+      breakfasts.
+    </p>
+    <div class="hero-buttons">
+      <a href="menu.html" class="btn explore-btn">Explore Our Menu</a>
+      <a href="new.html" class="btn new-btn">New Arrivals</a>
+    </div>
+  </section>
+  <div id="greetingMessage" class="text-center fw-bold py-3 fs-4"></div>
+  <section class="text-center my-5">
+    <p id="shortText">Our baristas create magic every morning...</p>
+    <p id="moreText" class="d-none">They carefully roast, blend and craft drinks with love ☕</p>
+    <button id="readMoreBtn" class="btn btn-outline-dark mt-2">Read more</button>
+  </section>
+  <section class="container my-5" id="stats">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="stat" data-to="1200">0</div>
+        <p>Happy Customers</p>
+      </div>
+      <div class="col-md-4">
+        <div class="stat" data-to="3500">0</div>
+        <p>Cups Served</p>
+      </div>
+      <div class="col-md-4">
+        <div class="stat" data-to="48">0</div>
+        <p>Menu Items</p>
+      </div>
+    </div>
+  </section>
+  <!-- ===== GALLERY / CAROUSEL ===== -->
+  <section class="gallery text-center py-5">
+    <h2>Our Cozy Corner</h2>
+    <div id="cafeCarousel" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 900px">
+      <div class="carousel-inner rounded-4 shadow">
+        <div class="carousel-item active">
+          <img src="images/cafe1.png" class="d-block w-100 rounded-4" alt="Cafe interior" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Café Interior</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="images/4.jpg" class="d-block w-100 rounded-4" alt="Table and coffee" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Table and Coffee</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="images/P.png" class="d-block w-100 rounded-4" alt="Our Chefs" />
+          <div class="carousel-caption d-none
+          -none d-md-block">
+            <h5>Our Chefs</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#cafeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#cafeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE BUTTONS (Task 1 + Task 3) ===== -->
+  <section class="text-center my-5 d-flex justify-content-center gap-4 flex-wrap">
+    <button id="colorBtn" class="btn btn-outline-dark px-4 py-2">
+      ☕ Change Café Mood
+    </button>
+
+    <button id="openPopupBtn" class="btn btn-outline-dark px-4 py-2">
+      💌 Join our Coffee Club
+    </button>
+  </section>
+
+
+
+  <!-- ===== FAQ (Task 2 Accordion) ===== -->
+  <section class="faq text-center my-5">
+    <h2 class="animate-up mb-4">Why Choose Café Leaclerc?</h2>
+
+    <div class="accordion mx-auto" id="faqAccordion" style="max-width: 700px">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+            Why choose Café Leaclerc?
           </button>
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="bar.html">Bar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero text-center">
-      <h1>Welcome to Café Leaclercc</h1>
-      <p>
-        Your cozy spot for fresh coffee, exquisite desserts, and unforgettable
-        breakfasts.
-      </p>
-      <div class="hero-buttons">
-        <a href="menu.html" class="btn explore-btn">Explore Our Menu</a>
-        <a href="new.html" class="btn new-btn">New Arrivals</a>
-      </div>
-    </section>
-    <div id="greetingMessage" class="text-center fw-bold py-3 fs-4"></div>
-    <section class="text-center my-5">
-      <p id="shortText">Our baristas create magic every morning...</p>
-      <p id="moreText" class="d-none">They carefully roast, blend and craft drinks with love ☕</p>
-      <button id="readMoreBtn" class="btn btn-outline-dark mt-2">Read more</button>
-    </section>
-    <section class="container my-5" id="stats">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <div class="stat" data-to="1200">0</div>
-          <p>Happy Customers</p>
-        </div>
-        <div class="col-md-4">
-          <div class="stat" data-to="3500">0</div>
-          <p>Cups Served</p>
-        </div>
-        <div class="col-md-4">
-          <div class="stat" data-to="48">0</div>
-          <p>Menu Items</p>
-        </div>
-      </div>
-    </section>
-    <!-- ===== GALLERY / CAROUSEL ===== -->
-    <section class="gallery text-center py-5">
-      <h2>Our Cozy Corner</h2>
-      <div
-        id="cafeCarousel"
-        class="carousel slide mx-auto"
-        data-bs-ride="carousel"
-        style="max-width: 900px"
-      >
-        <div class="carousel-inner rounded-4 shadow">
-          <div class="carousel-item active">
-            <img
-              src="images/cafe1.png"
-              class="d-block w-100 rounded-4"
-              alt="Cafe interior"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Café Interior</h5>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img
-              src="images/4.jpg"
-              class="d-block w-100 rounded-4"
-              alt="Table and coffee"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Table and Coffee</h5>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img
-              src="images/P.png"
-              class="d-block w-100 rounded-4"
-              alt="Our Chefs"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Our Chefs</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Controls -->
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#cafeCarousel"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#cafeCarousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </section>
-
-    <!-- ===== INTERACTIVE BUTTONS (Task 1 + Task 3) ===== -->
-    <section
-      class="text-center my-5 d-flex justify-content-center gap-4 flex-wrap"
-    >
-      <button id="colorBtn" class="btn btn-outline-dark px-4 py-2">
-        ☕ Change Café Mood
-      </button>
-
-      <button id="openPopupBtn" class="btn btn-outline-dark px-4 py-2">
-        💌 Join our Coffee Club
-      </button>
-    </section>
-   
-
-
-    <!-- ===== FAQ (Task 2 Accordion) ===== -->
-    <section class="faq text-center my-5">
-      <h2 class="animate-up mb-4">Why Choose Café Leaclercc?</h2>
-
-      <div class="accordion mx-auto" id="faqAccordion" style="max-width: 700px">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#q1"
-            >
-              Why choose Café Leaclercc?
-            </button>
-          </h2>
-          <div
-            id="q1"
-            class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion"
-          >
-            <div class="accordion-body">
-              Because we serve love in every cup — from hand-crafted lattes to
-              freshly baked croissants, all made with care and warmth.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#q2"
-            >
-              What makes our desserts special?
-            </button>
-          </h2>
-          <div
-            id="q2"
-            class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion"
-          >
-            <div class="accordion-body">
-              Our pastries are made daily using natural ingredients, with
-              recipes inspired by French cafés and crafted by local bakers.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#q3"
-            >
-              Do we deliver?
-            </button>
-          </h2>
-          <div
-            id="q3"
-            class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion"
-          >
-            <div class="accordion-body">
-              Yes! You can order via our website or call us directly — we
-              deliver your favorite drinks and desserts around the city.
-            </div>
+        </h2>
+        <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Because we serve love in every cup — from hand-crafted lattes to
+            freshly baked croissants, all made with care and warmth.
           </div>
         </div>
       </div>
-    </section>
-    <!-- ===== PROMO CODE (Copy to Clipboard) ===== -->
-    <section class="text-center my-4" id="promo">
-      <p class="mb-2">Promo Code: <code id="promoCode">LEACLERCC-10</code></p>
-      <button id="copyPromo" class="btn-copy">Copy</button>
-    </section>
 
-    <!-- ===== POPUP FORM ===== -->
-    <div id="coffeePopup" class="popup-overlay d-none">
-      <div class="popup-content position-relative">
-        <button
-          id="closePopupBtn"
-          class="btn-close position-absolute top-0 end-0 m-3"
-        ></button>
-        <h3 class="mb-3">☕ Join our Coffee Club</h3>
-        <p class="text-muted mb-3">Get exclusive offers and updates!</p>
-
-        <form id="coffeeForm" novalidate>
-          <div class="mb-3 text-start">
-            <label for="coffeeName" class="form-label">Your Name</label>
-            <input type="text" id="coffeeName" class="form-control" required />
-            <div class="invalid-feedback">Please enter your name.</div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+            What makes our desserts special?
+          </button>
+        </h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Our pastries are made daily using natural ingredients, with
+            recipes inspired by French cafés and crafted by local bakers.
           </div>
+        </div>
+      </div>
 
-          <div class="mb-3 text-start">
-            <label for="coffeeEmail" class="form-label">Email</label>
-            <input
-              type="email"
-              id="coffeeEmail"
-              class="form-control"
-              required
-            />
-            <div class="invalid-feedback">Please enter a valid email.</div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+            Do we deliver?
+          </button>
+        </h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes! You can order via our website or call us directly — we
+            deliver your favorite drinks and desserts around the city.
           </div>
-
-          <button type="submit" class="btn btn-dark w-100">Subscribe</button>
-        </form>
+        </div>
       </div>
     </div>
-     <p class="text-center fw-bold" id="datetime"></p>
-    <!-- ===== STAR RATING (Akerke's Feature) ===== -->
-    <section class="text-center my-5">
-      <h2 class="mb-3">Rate your Café Experience</h2>
-      <ul id="stars" class="rating-stars" role="radiogroup" aria-label="Rate from 1 to 5">
-        <li class="star" role="radio" aria-checked="false" tabindex="0" data-value="1">★</li>
-        <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="2">★</li>
-        <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="3">★</li>
-        <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="4">★</li>
-        <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="5">★</li>
-      </ul>
-      <p class="mt-2">Your rating: <span id="ratingValue"></span></p>
-    </section>
-    <div id="hintBox" class="hint-box d-none">
+  </section>
+  <!-- ===== PROMO CODE (Copy to Clipboard) ===== -->
+  <section class="text-center my-4" id="promo">
+    <p class="mb-2">Promo Code: <code id="promoCode">LEACLERC-10</code></p>
+    <button id="copyPromo" class="btn-copy">Copy</button>
+  </section>
+
+  <!-- ===== POPUP FORM ===== -->
+  <div id="coffeePopup" class="popup-overlay d-none">
+    <div class="popup-content position-relative">
+      <button id="closePopupBtn" class="btn-close position-absolute top-0 end-0 m-3"></button>
+      <h3 class="mb-3">☕ Join our Coffee Club</h3>
+      <p class="text-muted mb-3">Get exclusive offers and updates!</p>
+
+      <form id="coffeeForm" novalidate>
+        <div class="mb-3 text-start">
+          <label for="coffeeName" class="form-label">Your Name</label>
+          <input type="text" id="coffeeName" class="form-control" required />
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+
+        <div class="mb-3 text-start">
+          <label for="coffeeEmail" class="form-label">Email</label>
+          <input type="email" id="coffeeEmail" class="form-control" required />
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+
+        <button type="
+        submit" class="btn btn-dark w-100">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <p class="text-center fw-bold" id="datetime"></p>
+  <!-- ===== STAR RATING (Akerke's Feature) ===== -->
+  <section class="text-center my-5">
+    <h2 class="mb-3">Rate your Café Experience</h2>
+    <ul id="stars" class="rating-stars" role="radiogroup" aria-label="Rate from 1 to 5">
+      <li class="star" role="radio" aria-checked="false" tabindex="0" data-value="1">★</li>
+      <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="2">★</li>
+      <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="3">★</li>
+      <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="4">★</li>
+      <li class="star" role="radio" aria-checked="false" tabindex="-1" data-value="5">★</li>
+    </ul>
+    <p class="mt-2">Your rating: <span id="ratingValue"></span></p>
+  </section>
+  <div id="hintBox" class="hint-box d-none">
     💡 Tip: Use ← or → to navigate between pages!
-    </div>
+  </div>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="text-center py-4">
-      <p>© 2025 Café Leaclercc. All rights reserved.</p>
-      <p>Team: Akerke Tastemir, Mnaidarova Nargiza, Tyulebayeva Arailym</p>
-    </footer>
-    <div id="toast" class="toast-box" style="display:none;"></div>
-    <button id="themeToggle" class="side-theme-btn" >🌙</button>
-    <script src="akerke&arai.js"></script>
-    <script src="theme.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <!-- ===== FOOTER ===== -->
+  <footer class="text-center py-4">
+    <p>© 2025 Café Leaclerc. All rights reserved.</p>
+    <p>Team: Akerke Tastemir, Mnaidarova Nargiza, Tyulebayeva Arailym</p>
+  </footer>
+  <div id="toast" class="toast-box" style="display:none;"></div>
+  <button id="themeToggle" class="side-theme-btn">🌙</button>
+  <script src="akerke&arai.js"></script>
+  <script src="theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

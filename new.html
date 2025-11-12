@@ -1,168 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>New Arrivals - Café Leaclercc</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="akerke.css">
-        <link rel="stylesheet" href="theme.css">
-        <script src="akerke&arai.js"></script>
-    </head>
-    <body class="new">
 
-        <!-- Header & Navigation -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand d-flex align-items-center" href="index.html">
-                        <img src="images/logo.png" alt="Café Leaclerc Logo" width="60" height="60" class="rounded-circle me-2">
-                        Café Leaclercc
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals - Café Leaclerc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="akerke.css">
+    <link rel="stylesheet" href="theme.css">
+    <script src="script.js"></script>
+</head>
+
+<body class="new">
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" alt="Café Leaclerc Logo" width="60" height="60"
+                        class="rounded-circle me-2">
+                    Café Leaclerc
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="bar.html">Bar</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div id="greetingMessage" class="text-center fw-bold py-3 fs-4"></div>
+                        <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Log In</a></li>
 
-        </header>
-<!-- New Arrivals Section -->
-        <section class="new-arrivals">
-            <h2>✨ New Arrivals ✨</h2>
-            <div class="items">
-                <div class="item">
-                    <img src="images/1new.png" alt="Berry Sunset Frappe">
-                    <h3>Berry Sunset Frappe</h3>
-                    <p class="description">A refreshing mix of strawberries, raspberries, and creamy foam.</p>
-                    <p class="price">1900 ₸</p>
-                    <a href="menu.html" class="btn order-btn">Order Now</a>
-                </div>
-                <div class="item">
-                    <img src="images/2new.png" alt="Coconut Matcha Latte">
-                    <h3>Coconut Matcha Latte</h3>
-                    <p class="description">Rich matcha latte blended with coconut milk for a tropical twist.</p>
-                    <p class="price">2000 ₸</p>
-                    <a href="menu.html" class="btn order-btn">Order Now</a>
-                </div>
-                <div class="item">
-                    <img src="images/3new.png" alt="Caramel Choco Lava Cake">
-                    <h3>Caramel Choco Lava Cake</h3>
-                    <p class="description">Warm chocolate cake with melting caramel inside. A true delight!</p>
-                    <p class="price">2500 ₸</p>
-                    <a href="menu.html" class="btn order-btn">Order Now</a>
+                    </ul>
                 </div>
             </div>
-            <h2>Other Favorites</h2>
-            <div class="items">
-                <div class="item">
-                    <img src="images/4new.png" alt="Matcha Latte">
-                    <h3>Matcha Latte Classic</h3>
-                    <p>Earthy, creamy, and energizing.</p>
-                    <a href="menu.html" class="btn order-btn">Order Now</a>
-                </div>
-                <div class="item">
-                    <img src="images/5new.png" alt="Chocolate Muffin">
-                    <h3>Chocolate Muffin</h3>
-                    <p>Rich chocolate goodness in every bite.</p>
-                    <a href="menu.html" class="btn order-btn">Order Now</a>
-                </div>
-                <div class="item">
-                    <img src="images/6new.png" alt="Iced Caramel Macchiato">
-                    <h3>Iced Caramel Macchiato</h3>
-                    <p>Refreshing layers of coffee and caramel.</p>
-                    <a href="menu.html" class="btn order-btn">Order Now</a>
-                </div>
+        </nav>
+        <div id="greetingMessage" class="text-center fw-bold py-3 fs-4"></div>
+
+    </header>
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals">
+        <h2>✨ New Arrivals ✨</h2>
+        <div class="items">
+            <div class="item">
+                <img src="images/1new.png" alt="Berry Sunset Frappe">
+                <h3>Berry Sunset Frappe</h3>
+                <p class="description">A refreshing mix of strawberries, raspberries, and creamy foam.</p>
+                <p class="price">1900 ₸</p>
+                <a href="menu.html" class="btn order-btn">Order Now</a>
             </div>
-        </section>
-        <!-- Footer -->
-         <section class="text-center my-5">
-            <button id="colorBtn" class="btn btn-outline-dark px-4 py-2">
-                ☕ Сhange Café Mood
-            </button>
-            <p class="mt-4 fw-bold" id="datetime"></p>
-        </section>
-
-<!-- === Astana Coffee API Section === -->
-<section class="section text-center" id="api-coffee">
-  <h2>Best Coffee Spots in Astana</h2>
-  <p class="mb-4">Discover top cafés across Astana ☕</p>
-  <button id="loadCafes" class="btn order-btn mb-4">Show Cafés</button>
-  <div id="cafeResults" class="row justify-content-center gap-4"></div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('loadCafes');
-  const box = document.getElementById('cafeResults');
-  if (!btn || !box) return;
-
-  let cafesVisible = false; // состояние: показываем или скрываем
-
-  btn.addEventListener('click', async () => {
-    if (!cafesVisible) {
-      // === 1. Загружаем кафе
-      box.innerHTML = '<p class="text-muted">☕ Loading cafés in Astana...</p>';
-      try {
-        const res = await fetch('cafes.json');
-        const data = await res.json();
-
-        // создаём карточки
-        box.innerHTML = '';
-        data.forEach(c => {
-          const col = document.createElement('div');
-          col.className = 'col-md-4 col-lg-3 fade-in';
-          col.innerHTML = `
-            <div class="cafe-card p-3 rounded shadow-sm h-100">
-              <img src="${c.image}" alt="${c.name}" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
-              <h5 class="fw-bold">${c.name}</h5>
-              <p class="mb-1 text-muted">${c.address}</p>
-              <p class="small fw-semibold text-warning">⭐ ${c.rating}</p>
-              <a href="${c.website}" target="_blank" class="btn btn-sm order-btn mt-2">Visit</a>
+            <div class="item">
+                <img src="images/2new.png" alt="Coconut Matcha Latte">
+                <h3>Coconut Matcha Latte</h3>
+                <p class="description">Rich matcha latte blended with coconut milk for a tropical twist.</p>
+                <p class="price">2000 ₸</p>
+                <a href="menu.html" class="btn order-btn">Order Now</a>
             </div>
-          `;
-          box.appendChild(col);
-        });
-
-        // === 2. Меняем текст кнопки
-        btn.textContent = 'Hide Cafés';
-        cafesVisible = true;
-      } catch (err) {
-        box.innerHTML = '<p class="text-danger">❌ Unable to load local cafés. Please try again later.</p>';
-      }
-    } else {
-      // === 3. Скрываем кафе
-      box.innerHTML = '';
-      btn.textContent = 'Show Cafés';
-      cafesVisible = false;
-    }
-  });
-});
-</script>
-
-
-        <!-- Back Button -->
-        <div class="new-back">
-             <a href="index.html" class="btn new-back-btn">← Back to Home</a>
+            <div class="item">
+                <img src="images/3new.png" alt="Caramel Choco Lava Cake">
+                <h3>Caramel Choco Lava Cake</h3>
+                <p class="description">Warm chocolate cake with melting caramel inside. A true delight!</p>
+                <p class="price">2500 ₸</p>
+                <a href="menu.html" class="btn order-btn">Order Now</a>
+            </div>
         </div>
+        <h2>Other Favorites</h2>
+        <div class="items">
+            <div class="item">
+                <img src="images/4new.png" alt="Matcha Latte">
+                <h3>Matcha Latte</h3>
+                <p>Earthy, creamy, and energizing.</p>
+                <a href="menu.html" class="btn order-btn">Order Now</a>
+            </div>
+            <div class="item">
+                <img src="images/5new.png" alt="Chocolate Muffin">
+                <h3>Chocolate Muffin</h3>
+                <p>Rich chocolate goodness in every bite.</p>
+                <a href="menu.html" class="btn order-btn">Order Now</a>
+            </div>
+            <div class="item">
+                <img src="images/6new.png" alt="Iced Caramel Macchiato">
+                <h3>Iced Caramel Macchiato</h3>
+                <p>Refreshing layers of coffee and caramel.</p>
+                <a href="menu.html" class="btn order-btn">Order Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Back Button -->
+    <div class="new-back">
+        <a href="index.html" class="btn new-back-btn">← Back to Home</a>
+    </div>
+    <!-- Footer -->
+    <section class="text-center my-5">
+        <button id="colorBtn" class="btn btn-outline-dark px-4 py-2">
+            ☕ Сhange Café Mood
+        </button>
+        <p class="mt-4 fw-bold" id="datetime"></p>
+    </section>
+    <footer>
+        <p>© 2025 Café Leaclerc. All rights reserved.</p>
+        <p>Team: Akerke Tastemir, Mnaidarova Nargiza, Tyulebayeva Arailym</p>
+    </footer>
+    <div id="toast" class="toast-box" style="display:none;"></div>
+    <button id="themeToggle" class="side-theme-btn" title="Switch Theme">🌙</button>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
-        <footer>
-            <p>© 2025 Café Leaclercc. All rights reserved.</p>
-            <p>Team: Akerke Tastemir, Mnaidarova Nargiza, Tyulebayeva Arailym</p>
-        </footer>
-        <div id="toast" class="toast-box" style="display:none;"></div>
-        <button id="themeToggle" class="side-theme-btn" title="Switch Theme">🌙</button>
-        <script src="akerke&arai.js"></script>
-        <script src="theme.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
 </html>

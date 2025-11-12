@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In – Café Leaclerc</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="akerke.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+
+<body class="contact">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" width="60" height="60" class="rounded-circle me-2" alt="">Café Leaclerc
+      </a>
+    </div>
+  </nav>
+
+  <!-- Login Form -->
+  <main class="container my-5 text-center">
+    <h1 class="mb-4">Welcome Back!</h1>
+    <form id="loginForm" class="mx-auto text-start" style="max-width:500px;">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" id="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Log In</button>
+      <p class="mt-3 text-center">Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p>© 2025 Café Leaclerc. All rights reserved.</p>
+  </footer>
+
+  <button id="themeToggle" class="side-theme-btn">🌙</button>
+
+  <script>
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if(storedUser && storedUser.email === email && storedUser.password === password){
+      localStorage.setItem('loggedIn', 'true');
+      alert('Welcome, ' + storedUser.name + '!');
+      window.location.href = 'index.html';
+    } else {
+      alert('Invalid email or password.');
+    }
+  });
+  </script>
+
+  <script src="theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

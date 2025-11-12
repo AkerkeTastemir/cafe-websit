@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile – Café Leaclerc</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="akerke.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+
+<body class="contact">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" width="60" height="60" class="rounded-circle me-2" alt="">Café Leaclerc
+      </a>
+    </div>
+  </nav>
+
+  <main class="container my-5 text-center" id="profileContent"></main>
+
+  <footer class="text-center py-4">
+    <p>© 2025 Café Leaclerc. All rights reserved.</p>
+  </footer>
+
+  <button id="themeToggle" class="side-theme-btn">🌙</button>
+
+  <script>
+  const user = JSON.parse(localStorage.getItem('user'));
+  const loggedIn = localStorage.getItem('loggedIn');
+  const content = document.getElementById('profileContent');
+
+  if(user && loggedIn === 'true'){
+    content.innerHTML = `
+      <h1 class="mb-3">👋 Welcome, ${user.name}!</h1>
+      <p><strong>Email:</strong> ${user.email}</p>
+      <button id="logoutBtn" class="btn btn-danger mt-4">Log Out</button>
+    `;
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      alert('You have logged out.');
+      window.location.href = 'login.html';
+    });
+  } else {
+    window.location.href = 'login.html';
+  }
+  </script>
+
+  <script src="theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

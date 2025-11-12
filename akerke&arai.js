@@ -530,3 +530,46 @@ $(document).ready(function () {
         });
       });
     });
+
+
+
+// ================= USER LOGIN STATUS (Navbar Sync) =================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loggedIn = localStorage.getItem('loggedIn');
+  const user = JSON.parse(localStorage.getItem('user'));
+  const nav = document.querySelector('.navbar-nav');
+
+  if (!nav) return; 
+
+  
+  if (loggedIn === 'true' && user) {
+   
+    document.querySelectorAll('a[href="login.html"], a[href="signup.html"]').forEach(el => el.remove());
+
+    
+    if (!document.getElementById('navUserGreeting')) {
+      const greetingItem = document.createElement('li');
+      greetingItem.className = 'nav-item';
+      greetingItem.id = 'navUserGreeting';
+      greetingItem.innerHTML = `
+        <a class="nav-link fw-bold text-success" href="profile.html">👋 ${user.name}</a>
+      `;
+      nav.appendChild(greetingItem);
+
+      
+      const logoutItem = document.createElement('li');
+      logoutItem.className = 'nav-item';
+      logoutItem.innerHTML = `<a class="nav-link text-danger" href="#" id="logoutLink">Log Out</a>`;
+      nav.appendChild(logoutItem);
+
+      
+      logoutItem.addEventListener('click', e => {
+        e.preventDefault();
+        localStorage.removeItem('loggedIn');
+        alert('You have logged out.');
+        window.location.href = 'login.html';
+      });
+    }
+  }
+});
