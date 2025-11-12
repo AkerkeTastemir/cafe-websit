@@ -84,10 +84,6 @@
                 </div>
             </div>
         </section>
-        <!-- Back Button -->
-        <div class="new-back">
-             <a href="index.html" class="btn new-back-btn">← Back to Home</a>
-        </div>
         <!-- Footer -->
          <section class="text-center my-5">
             <button id="colorBtn" class="btn btn-outline-dark px-4 py-2">
@@ -110,34 +106,54 @@ document.addEventListener('DOMContentLoaded', () => {
   const box = document.getElementById('cafeResults');
   if (!btn || !box) return;
 
+  let cafesVisible = false; // состояние: показываем или скрываем
+
   btn.addEventListener('click', async () => {
-    box.innerHTML = '<p class="text-muted">☕ Loading cafés in Astana...</p>';
-    try {
-      const res = await fetch('cafes.json');
-      const data = await res.json();
+    if (!cafesVisible) {
+      // === 1. Загружаем кафе
+      box.innerHTML = '<p class="text-muted">☕ Loading cafés in Astana...</p>';
+      try {
+        const res = await fetch('cafes.json');
+        const data = await res.json();
+
+        // создаём карточки
+        box.innerHTML = '';
+        data.forEach(c => {
+          const col = document.createElement('div');
+          col.className = 'col-md-4 col-lg-3 fade-in';
+          col.innerHTML = `
+            <div class="cafe-card p-3 rounded shadow-sm h-100">
+              <img src="${c.image}" alt="${c.name}" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+              <h5 class="fw-bold">${c.name}</h5>
+              <p class="mb-1 text-muted">${c.address}</p>
+              <p class="small fw-semibold text-warning">⭐ ${c.rating}</p>
+              <a href="${c.website}" target="_blank" class="btn btn-sm order-btn mt-2">Visit</a>
+            </div>
+          `;
+          box.appendChild(col);
+        });
+
+        // === 2. Меняем текст кнопки
+        btn.textContent = 'Hide Cafés';
+        cafesVisible = true;
+      } catch (err) {
+        box.innerHTML = '<p class="text-danger">❌ Unable to load local cafés. Please try again later.</p>';
+      }
+    } else {
+      // === 3. Скрываем кафе
       box.innerHTML = '';
-      data.forEach(c => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4 col-lg-3';
-        col.innerHTML = `
-        <div class="cafe-card p-3 rounded shadow-sm h-100">
-            <img src="${c.image}" alt="${c.name}" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
-            <h5 class="fw-bold">${c.name}</h5>
-            <p class="mb-1 text-muted">${c.address}</p>
-            <p class="small fw-semibold text-warning">⭐ ${c.rating}</p>
-            <a href="${c.website}" target="_blank" class="btn btn-sm order-btn mt-2">Visit</a>
-        </div>
-        `;
-        box.appendChild(col);
-      });
-    } catch (err) {
-      box.innerHTML = '<p class="text-danger">❌ Unable to load local cafés. Please try again later.</p>';
+      btn.textContent = 'Show Cafés';
+      cafesVisible = false;
     }
   });
 });
 </script>
 
 
+        <!-- Back Button -->
+        <div class="new-back">
+             <a href="index.html" class="btn new-back-btn">← Back to Home</a>
+        </div>
 
         <footer>
             <p>© 2025 Café Leaclercc. All rights reserved.</p>

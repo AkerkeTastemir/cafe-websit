@@ -77,9 +77,12 @@
 /* =====================================
    HERO SECTION — Cozy Café Welcome
 ===================================== */
+/* =====================================
+   HERO SECTION — Cozy Café Welcome (Fixed Transition)
+===================================== */
 .index .hero {
   position: relative;
-  background-image: url("images/back.jpg"); /* ✅ путь к твоему фону */
+  background-image: url("images/back.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -90,7 +93,7 @@
   overflow: hidden;
 }
 
-/* мягкий полупрозрачный фильтр для читаемости текста */
+/* Полупрозрачный фильтр с мягким затемнением снизу */
 .index .hero::before {
   content: "";
   position: absolute;
@@ -98,10 +101,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 250, 245, 0.8); /* лёгкий бежевый фильтр поверх фото */
+  /* 👇 вот здесь главный эффект: верхняя часть светлая, нижняя — сливается с фоном */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 250, 245, 0.85) 0%,  /* светлая часть сверху */
+    rgba(245, 240, 230, 0.95) 60%, /* мягкий бежевый в середине */
+    rgba(235, 231, 218, 1) 100%    /* тот же цвет, что и фон страницы */
+  );
   z-index: 1;
   backdrop-filter: blur(2px);
 }
+
 
 /* текст и кнопки поверх фильтра */
 .index .hero h1,
@@ -733,4 +743,18 @@ body.dark-mode .cafe-card:hover {
 .cafe-card img {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Анимация плавного появления карточек */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
