@@ -308,3 +308,7 @@ body.dark-mode .star.active {
   color: #ffd700 !important; 
   transform: scale(1.15);
 }
+
+body.dark-mode #suggestions li {
+  background-color: #4b2e2e;
+}
