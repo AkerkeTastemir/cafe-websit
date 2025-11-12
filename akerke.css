@@ -649,6 +649,25 @@
   font-weight: 600;
   display: none;
 }
+/* ===== Stats Section ===== */
+#stats .stat {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #4b2e2e; /* 🔆 светлый цвет цифр */
+}
+
+#stats p {
+  color: #4b2e2e; /* мягкий бежевый цвет текста под цифрами */
+}
+
+/* 🌙 Для темной темы */
+body.dark-mode #stats .stat {
+  color: #ffe8b0 !important;
+}
+
+body.dark-mode #stats p {
+  color: #f5f3e7 !important;
+}
 /* ======== EXTRA MOBILE FIXES (<=768px) ======== */
 @media (max-width: 768px) {
 
