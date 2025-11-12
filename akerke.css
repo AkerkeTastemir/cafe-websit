@@ -423,7 +423,7 @@
 }
 .rating-stars .star:hover { transform: scale(1.15); }
 .rating-stars .star.active,
-.rating-stars .star.hover { color: #ffcc66; }
+.rating-stars .star.hover { color: #f9c45b; }
 .hint-box {
   position: fixed;
   bottom: 20px;

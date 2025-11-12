@@ -264,7 +264,7 @@ body.dark-mode.contact .form-section form {
 
 body.dark-mode.contact .form-section input,
 body.dark-mode.contact .form-section textarea {
-  background-color: #33302d !important;
+  background-color: #2a2725 !important;
   color: #f5f3e7 !important;
   border: 1px solid #d1a874 !important;
   border-radius: 10px !important;
@@ -273,7 +273,7 @@ body.dark-mode.contact .form-section textarea {
 
 body.dark-mode.contact .form-section input:focus,
 body.dark-mode.contact .form-section textarea:focus {
-  background-color: #3a3734 !important;
+  background-color: #2a2725 !important;
   border-color: #ffcc99 !important;
   box-shadow: 0 0 0 0.25rem rgba(255, 204, 153, 0.25);
 }
@@ -290,4 +290,21 @@ body.dark-mode.contact .form-section button[type="submit"] {
 body.dark-mode.contact .form-section button[type="submit"]:hover {
   background-color: #ffe8b0 !important;
   color: #2b2b2b !important;
+}
+
+/* =====================================
+   DARK MODE — STAR RATING FIX
+===================================== */
+
+
+body.dark-mode .star {
+  color: #ecead0 !important; 
+  transition: color 0.3s, transform 0.2s;
+}
+
+
+body.dark-mode .star:hover,
+body.dark-mode .star.active {
+  color: #ffd700 !important; 
+  transform: scale(1.15);
 }
