@@ -1,3 +1,13 @@
+// === Scroll Progress Bar ===
+window.addEventListener('scroll', () => {
+  const scrollBar = document.getElementById('scrollBar');
+  if (!scrollBar) return;
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (window.scrollY / totalHeight) * 100;
+  scrollBar.style.width = progress + '%';
+});
+
+
 // jQuery Real time Search + Autocomplete + Highlight ===
 $(function () {
   const $search = $('#menuSearch');

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Coffee BOOM",
+    "address": "Сарайшык 34/1",
+    "rating": "4.6",
+    "website": "https://wwww.coffeeboom.kz",
+    "image": "images/coffeeboom.jpg"
+  },
+  {
+    "name": "CrepeCafe",
+    "address": "У-899 1/1",
+    "rating": "4.4",
+    "website": "https://crepecafe.kz",
+    "image": "images/crepecafe.jpg"
+  },
+  {
+    "name": "Koktem",
+    "address": "Динмухамед Конаев 12/1",
+    "rating": "4.4",
+    "website": "https://cafekoktem.kz",
+    "image": "images/cafekoktem.jpg"
+  },
+  {
+    "name": "Degirmen",
+    "address": "Санжар Асфендиярова 10",
+    "rating": "4.8",
+    "website": "https://degirmen.kz",
+    "image": "images/degirmen.jpg"
+  },
+  {
+    "name": "Okadzaki.kz",
+    "address": "Темирказык 65",
+    "rating": "4.9",
+    "website": "https://okadzaki.kz",
+    "image": "images/okadzaki.jpg"
+  },
+  {
+    "name": "ONESHOTT COFFEE kitchen",
+    "address": "Алихан Бокейхан 16",
+    "rating": "5.0",
+    "website": "https://oneshott.kz",
+    "image": "images/oneshottt.jpg"
+  }
+]

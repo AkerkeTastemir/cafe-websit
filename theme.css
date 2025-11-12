@@ -222,3 +222,89 @@ body.dark-mode.contact footer {
   background-color: #111 !important;
   color: #f5f5dc !important;
 }
+
+
+
+/* =====================================
+   DARK MODE — GLOBAL IMPROVEMENTS
+   (Unified colors for readability)
+===================================== */
+
+/* Общий фон и цвет текста */
+body.dark-mode {
+  background-color: #1c1b19 !important;
+  color: #f5f3e7 !important;
+}
+
+/* Navbar & Footer */
+body.dark-mode .navbar,
+body.dark-mode footer {
+  background-color: #262522 !important;
+  color: #f5f3e7 !important;
+}
+
+/* Универсальные кнопки */
+body.dark-mode .btn,
+body.dark-mode .order-btn {
+  background-color: #f5f3e7 !important;
+  color: #2a2725 !important;
+  border: none !important;
+}
+body.dark-mode .btn:hover,
+body.dark-mode .order-btn:hover {
+  background-color: #ffcc99 !important;
+  color: #2a2725 !important;
+}
+
+/* ===== API / COFFEE CARDS ===== */
+body.dark-mode .cafe-card {
+  background-color: #2a2725 !important;
+  color: #f5f3e7 !important;
+  border: 1px solid #d1a874 !important;
+}
+body.dark-mode .cafe-card h5 {
+  color: #ffe8b0 !important;
+}
+body.dark-mode .cafe-card .text-muted {
+  color: #c8c3b0 !important;
+}
+
+/* ===== MENU CARDS ===== */
+body.dark-mode .item {
+  background-color: #2a2725 !important;
+  border: 1px solid #d1a874 !important;
+  color: #f5f3e7 !important;
+}
+body.dark-mode .item h3 {
+  color: #ffcc99 !important;
+}
+body.dark-mode .item p {
+  color: #d6d2c4 !important;
+}
+
+/* ===== FIND YOUR FAVORITE / SEARCH ===== */
+body.dark-mode .search-section {
+  background-color: #2a2725 !important;
+  color: #f5f3e7 !important;
+}
+body.dark-mode input[type="text"],
+body.dark-mode input.form-control {
+  background-color: #33312e !important;
+  color: #f5f3e7 !important;
+  border: 1px solid #d1a874 !important;
+}
+body.dark-mode input::placeholder {
+  color: #c9c4b3 !important;
+  opacity: 0.8;
+}
+
+/* Заголовки и разделители */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffe8b0 !important;
+}
+body.dark-mode hr {
+  border-color: #d1a874 !important;
+  opacity: 0.5;
+}

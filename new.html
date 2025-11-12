@@ -66,7 +66,7 @@
             <div class="items">
                 <div class="item">
                     <img src="images/4new.png" alt="Matcha Latte">
-                    <h3>Matcha Latte</h3>
+                    <h3>Matcha Latte Classic</h3>
                     <p>Earthy, creamy, and energizing.</p>
                     <a href="menu.html" class="btn order-btn">Order Now</a>
                 </div>
@@ -95,6 +95,50 @@
             </button>
             <p class="mt-4 fw-bold" id="datetime"></p>
         </section>
+
+<!-- === Astana Coffee API Section === -->
+<section class="section text-center" id="api-coffee">
+  <h2>Best Coffee Spots in Astana</h2>
+  <p class="mb-4">Discover top cafés across Astana ☕</p>
+  <button id="loadCafes" class="btn order-btn mb-4">Show Cafés</button>
+  <div id="cafeResults" class="row justify-content-center gap-4"></div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('loadCafes');
+  const box = document.getElementById('cafeResults');
+  if (!btn || !box) return;
+
+  btn.addEventListener('click', async () => {
+    box.innerHTML = '<p class="text-muted">☕ Loading cafés in Astana...</p>';
+    try {
+      const res = await fetch('cafes.json');
+      const data = await res.json();
+      box.innerHTML = '';
+      data.forEach(c => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 col-lg-3';
+        col.innerHTML = `
+        <div class="cafe-card p-3 rounded shadow-sm h-100">
+            <img src="${c.image}" alt="${c.name}" class="img-fluid rounded mb-3" style="height:180px; object-fit:cover;">
+            <h5 class="fw-bold">${c.name}</h5>
+            <p class="mb-1 text-muted">${c.address}</p>
+            <p class="small fw-semibold text-warning">⭐ ${c.rating}</p>
+            <a href="${c.website}" target="_blank" class="btn btn-sm order-btn mt-2">Visit</a>
+        </div>
+        `;
+        box.appendChild(col);
+      });
+    } catch (err) {
+      box.innerHTML = '<p class="text-danger">❌ Unable to load local cafés. Please try again later.</p>';
+    }
+  });
+});
+</script>
+
+
+
         <footer>
             <p>© 2025 Café Leaclerc. All rights reserved.</p>
             <p>Team: Akerke Tastemir, Mnaidarova Nargiza, Tyulebayeva Arailym</p>

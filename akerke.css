@@ -706,3 +706,31 @@
     padding: 10px 14px;
   }
 }
+
+
+/* === Astana Coffee Cards Styling === */
+.cafe-card {
+  background-color: #fffaf3;
+  border: 1px solid #c89b6d;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cafe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.cafe-card h5 {
+  color: #4b2e2e;
+  font-family: 'Poppins', sans-serif;
+}
+body.dark-mode .cafe-card {
+  background-color: #2b2b2b;
+  color: #f5f5dc;
+  border: 1px solid #ffcc99;
+}
+body.dark-mode .cafe-card:hover {
+  box-shadow: 0 8px 16px rgba(255,204,153,0.15);
+}
+.cafe-card img {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
